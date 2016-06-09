@@ -22,7 +22,7 @@ Supports Python 3.5 and above.
 
 # Getting Started
 
-1. Simple Redis Cache
+- Simple Redis Cache
 
 ```py
 # Import redis Connection pool and CacheClient.
@@ -59,8 +59,7 @@ cache.get(14, age=15)
 # This will delete the cache for ID: 12
 cache.delete(12)
 ```
-
-2. Caching into a single hash
+- Caching into a single hash
 
 ```py
 # Import redis Connection pool and HashCacheClient.
