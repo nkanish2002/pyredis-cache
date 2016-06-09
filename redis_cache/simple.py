@@ -6,7 +6,7 @@ from .utils import key_generator, default_passage
 
 class CacheClient:
     """
-    CacheClient is a redis based cache handler. It has the following features:
+    CacheClient is a redis based simple cache client. It has the following features:
         *   Automatically Sync data between the sync_func and cache
         *   Use of Async/Await for Asynchronous execution of sync_func
     """
@@ -148,6 +148,11 @@ class CacheClient:
             del redis
 
     def delete(self, identity):
+        """
+        For deleting a key
+        :param identity:
+        :return:
+        """
         redis = StrictRedis(connection_pool=self.redis_pool)
         key = key_generator(self.key, identity)
         try:

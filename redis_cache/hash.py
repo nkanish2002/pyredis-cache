@@ -4,6 +4,11 @@ from .utils import key_generator, default_passage
 
 
 class HashCacheClient:
+    """
+    HashCacheClient can be used to cache contextually similar data under a common hash name.
+        *   Automatically Sync data between the sync_func and cache
+        *   Use of Async/Await for Asynchronous execution of sync_func
+    """
     def __init__(self, redis_pool: ConnectionPool, hash_key, key, sync_func, log=logging, set_func=default_passage,
                  get_func=default_passage, asynchronous=False):
         """
@@ -130,6 +135,12 @@ class HashCacheClient:
             del redis
 
     def delete(self, hash_id, identity):
+        """
+        For Deleting a key inside the hash
+        :param hash_id:
+        :param identity:
+        :return:
+        """
         redis = StrictRedis(connection_pool=self.redis_pool)
         hash_key = key_generator(self.hash_key, hash_id)
         key = key_generator(self.key, identity)
@@ -143,6 +154,11 @@ class HashCacheClient:
             del redis
 
     def delete_hash(self, hash_id):
+        """
+        For deleting the hash
+        :param hash_id:
+        :return:
+        """
         redis = StrictRedis(connection_pool=self.redis_pool)
         hash_key = key_generator(self.hash_key, hash_id)
         try:
