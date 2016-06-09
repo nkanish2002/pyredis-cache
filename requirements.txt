@@ -1,0 +1,4 @@
+redis
+# https://github.com/andymccurdy/redis-py
+hiredis
+# https://github.com/redis/hiredis-py
