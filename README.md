@@ -59,7 +59,8 @@ cache.get(14, age=15)
 # This will delete the cache for ID: 12
 cache.delete(12)
 ```
-- Caching into a single hash
+
+- Caching into a single hash. I am still working on this to make a much more flexible caching mechanism
 
 ```py
 # Import redis Connection pool and HashCacheClient.
