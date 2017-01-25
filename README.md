@@ -24,7 +24,7 @@ Supports Python 3.5 and above.
 
 - Simple Redis Cache
 
-```py
+```python
 # Import redis Connection pool and CacheClient.
 from redis import ConnectionPool
 from redis_cache import CacheClient
@@ -62,7 +62,7 @@ cache.delete(12)
 
 - Caching into a single hash. I am still working on this to make a much more flexible caching mechanism
 
-```py
+```python
 # Import redis Connection pool and HashCacheClient.
 from redis import ConnectionPool
 from redis_cache import CacheClient
@@ -116,7 +116,7 @@ If your function is Async i.e. makes use of `async` and `await` coroutines ([PEP
 You will have to use event loop to run use this functionality like asyncio and tornado.
 You could do the following:-
 
-```py
+```python
 cache = CacheClient(redis_pool, "Student", sync_func, set_func=json.dumps, get_func=json.loads, expire_time=10, asynchronous=True)
 
 async def some_func():
